@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Random user - Costamagna</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/intro.js@2.9.3/introjs.css" rel="stylesheet"/>
+    <script src="js/jQuery.js"></script>
+    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="assets/css/untitled-1.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+    <title>Random user</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/intro.js@2.9.3/intro.min.js"></script>
+
+    <link rel="shortcut icon" href= "IMG/logo.jpg">
+
+    
+</head>
+
+<body id="page-top">
+    <section>
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Generate users</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html">Home</a></li>
+                        <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#filtri">new users</a></li>
+                        <li class="nav-item mx-0 mx-lg-1 nascondi" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">User data</a></li>
+                        <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="introJs().start()">START TOUR</a></li>
+                    </ul></div>
+            </div>
+        </nav><br/>
+        <br/><br/><br/>
+        <h2 class="text-uppercase text-center text-secondary mb-0">Filters</h2>
+        <hr class="star-dark mb-5">
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <form id="filtri" data-intro="Filters" data-step="1"><label for="numeroUtenti">Numbers of users&nbsp; &nbsp;&nbsp;</label><input type="range" min="1" max="200" value="100" name="num" class="form-control-range slider" id="sliderUtenti" oninput="sliderChanged()" /><input type="text" class="form-control" id="numeroUtenti" name="num" oninput="textChanged" /><br/>
+                    <div id="filtriNazionalita"><label for="abilitaFiltroNazionalita">Nationalities</label><input type="checkbox" value="nat" id="abilitaFiltroNazionalita" class="checkBoxFiltri" onchange="cambiaStatoCheck(value,this)" /><label>&nbsp;&nbsp;</label></div><br/>
+                    <div id="filtriSesso"><label for="abilitaFiltroSesso">Gender</label><input type="checkbox" id="abilitaFiltroSesso" class="checkBoxFiltri" value="gender" onchange="cambiaStatoCheck(value,this)" /><label>&nbsp;&nbsp;</label></div><br/>
+                    <div><label for="abilitaFiltroPassword">Password type</label><input type="checkbox" id="abilitaFiltroPassword" class="checkBoxFiltri" value="password" onchange="cambiaStatoCheck(value,this)" /><label>&nbsp;&nbsp;</label></div><br/><br/></form>
+                <button class="btn btn-primary" type="button" onclick="generateUsers()" data-intro="Generates new users" data-step="2">Generate users</button>
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <header class="masthead bg-primary text-white text-center nascondi" id="NomeCognomeFoto">
+        <div class="container"><img src="" class="generati" width="10%"/><h1 id="Name" class="generati"></h1><h1 id="Surname" class="generati"></h1>
+            <hr class="star-light">
+        </div>
+    </header>
+    <section id="portfolio" class="portfolio nascondi" data-intro="User data" data-step="3">
+        <div class="container nascondi">
+            <h2 class="text-uppercase text-center text-secondary">general information</h2>
+            <hr class="star-dark mb-5">
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div id="userGenerati"><p id="Gender" class="generati text-center "> </p>
+                    <p id="Nationality" class="generati text-center"></p>
+                    <p id="Email" class="generati text-center "></p>
+                    <p id="Password" class="generati text-center "></p>
+                </div>
+                <p class="text-center">
+                        <button class="btn btn-primary" type="button" value="-1" onclick="cambiaIndice(value)">Previous</button>
+                    <button class="btn btn-primary" type="button" value="1" onclick="cambiaIndice(value)">Next</button>
+                </p>
+                <p id="labelContatore" class="text-center"></p>
+                <p id="labelMax" class="text-center"></p>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer class="footer text-center"><div class="container">
+        <div id="location">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p>Via chiari 48</p>
+            <p>
+                Narzole (CN) 12068
+            </p>
+        </div>
+        <div id="social">
+            <h4 class="text-uppercase">Around the Web</h4><a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/costa-web" target="_blank"><i class="fa fa-github"></i></a><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                href="https://www.instagram.com/andre.costa.03/" target="_blank"><i class="fa fa-instagram fa-fw"></i></a></div>
+        <br/><br/>
+    </div></footer>
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright ©&nbsp;Costamagna 2020</small></div>
+        </div>
+        <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/freelancer.js"></script>
+</body>
+
+</html>
